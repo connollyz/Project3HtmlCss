@@ -1,0 +1,156 @@
+//VARIBALES
+
+//COLOURS
+
+//gray
+$primary: #302C2C;
+//offwhite
+$secondary: #EFEEE4;
+//red
+$tertiary: #A60704;
+
+//fonts
+$baseFont:'Montserrat', sans-serif;
+
+
+//MIXINS
+@mixin h2($color){
+font-family: $baseFont;
+font-weight: 700;
+color: $color;
+}//h2 mixin
+
+@mixin column{
+	display: flex;
+	flex-direction: column;
+}//mixin colum
+
+@mixin row{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+}//mixin row
+
+@mixin input{
+	margin-top: 5px;
+	padding: 10px 5px;
+	font-size: 1.5rem;
+	border: 1px solid $primary;
+	border-radius: 5px;
+}//mixin input
+
+//BASE STYLES
+
+html{
+	font-size:62.5%;
+}//html
+
+
+header{
+	background: $primary;
+	position: relative;
+	height: 75px;
+	img{
+		position: absolute;
+		top: 20px;
+		left: 40px;
+	}//img
+	.wrapper{
+		justify-content: flex-end;
+		height: 100%;
+		nav{
+			margin: auto 0;
+			ul{ 
+				padding: 0; 
+				li{
+					display: inline-block;					
+					padding-left: 5px;
+					a{
+						opacity: .5;
+						padding: 5px;
+						color: $secondary;
+						&:hover{
+							opacity: 1;
+							border-bottom: 1px solid $secondary;
+						}//hover
+					}//a
+				}//li
+			}//ul
+		}//nav
+	}//wrapper
+}//header
+
+.wrapper{
+	max-width: 80%;
+	margin: 0 auto;
+	display: flex;
+}//wrapper
+
+h1{
+	font-family: $baseFont;
+	font-weight: bold;
+	color: $secondary;
+	font-size: 6rem;
+}//h1
+
+h2{
+	@include h2($primary)
+	font-size: 2.5rem;
+	margin: 75px 0px 50px;
+	display: block;
+	width: 100%;
+}//h2
+
+ul{
+	list-style: none;
+}//ul
+
+a{
+	text-decoration: none;
+	font-family:$baseFont;
+	font-size: 1.5rem;
+}//a
+
+p{
+	font-family:$baseFont;
+	font-size: 1.5rem;
+}//p
+
+.button{	
+	margin: 20px;
+	display: inline-block;
+	a{
+		padding: 5px 10px;
+		text-align: center;
+		border: 1px solid $primary;
+		border-radius: 5px;
+		color: $primary;
+		font-size: 1.5rem;
+		font-weight: 700;
+		transition: padding, font-size .2s ease-in-out;
+		&:hover{
+			padding: 7px 12px;
+			font-size: 1.7rem;
+		}//hover
+	}//a
+}//button
+
+.title{
+	font-weight: 700;
+}//title
+
+.list{
+    list-style-image:url(assets/dot.png);
+    padding: 0 20px 0 14px;
+
+}//list
+
+.column{
+	padding-right: 20px;
+	width: 50%;
+}//column
+
+
+
+
+
